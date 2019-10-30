@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE   listEventsFromUser(id_userP varchar(60))
+BEGIN
+SELECT inv.id_event, evn.name, evn.date, evn.description ,evn.location
+FROM invites inv inner join events evn on inv.id_event = evn.id
+WHERE (inv.id_user = id_userP OR id_userP is NULL);
+END;//
+DELIMITER ;
