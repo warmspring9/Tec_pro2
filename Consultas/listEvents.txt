@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE   listEvents( rangeDate1  Date,rangeDate2 Date)
+BEGIN
+SELECT *
+FROM events
+WHERE (rangeDate1 is NULL OR rangeDate2 is NULL OR (rangeDate1 < events.date AND  events.date< rangeDate2 ));
+END;//
+DELIMITER ;
