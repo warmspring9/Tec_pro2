@@ -1,0 +1,18 @@
+DELIMITER //
+CREATE  PROCEDURE   ageRangePorcentage()
+BEGIN
+SELECT dataRanges.range, count(*) as `occurences`
+from (
+SELECT CASE
+		WHEN DATEDIFF(CURRENT_DATE, STR_TO_DATE(p.birthdate, '%Y-%m-%d'))/365 <= 18 THEN '0-18' 
+		WHEN DATEDIFF(CURRENT_DATE, STR_TO_DATE(p.birthdate, '%Y-%m-%d'))/365 <= 30 THEN '19-30' 
+		WHEN DATEDIFF(CURRENT_DATE, STR_TO_DATE(p.birthdate, '%Y-%m-%d'))/365 <= 45 THEN '31-45' 
+		WHEN DATEDIFF(CURRENT_DATE, STR_TO_DATE(p.birthdate, '%Y-%m-%d'))/365 <= 55 THEN '46-55'
+		WHEN DATEDIFF(CURRENT_DATE, STR_TO_DATE(p.birthdate, '%Y-%m-%d'))/365 <= 65 THEN '56-65' 
+		WHEN DATEDIFF(CURRENT_DATE, STR_TO_DATE(p.birthdate, '%Y-%m-%d'))/365 <= 75 THEN '66-75' 
+		WHEN DATEDIFF(CURRENT_DATE, STR_TO_DATE(p.birthdate, '%Y-%m-%d'))/365 <= 85 THEN '76-85' 
+		ELSE '86+'end as `range`
+from users p) as dataRanges
+group by dataRanges.range;
+END;//
+DELIMITER ;
