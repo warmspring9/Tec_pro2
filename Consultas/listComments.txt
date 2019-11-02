@@ -1,0 +1,10 @@
+DELIMITER //
+CREATE  PROCEDURE   listComments(id_eventP int)
+BEGIN
+SELECT co.id_event, co.content, co.continent_name, co.photo
+FROM comments co
+WHERE (id_eventP is NULL OR co.id_event = id_eventP)
+order by (co.id_event);
+
+END;//
+DELIMITER ;
