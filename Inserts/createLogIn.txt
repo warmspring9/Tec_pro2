@@ -1,0 +1,16 @@
+DELIMITER //
+CREATE  PROCEDURE createLogIn(nameP varchar(60),last_nameP varchar(60),birthdateP date,photoP varchar(255),emailP varchar(60)  ,usernameP varchar(60),passwordP varchar(60))
+BEGIN
+INSERT INTO `sys`.`users`
+(`name`,
+`last_name`,
+`birthdate`,
+`photo`,
+`email`,
+`username`,
+`password`,
+`id_account`)
+VALUES (nameP,last_nameP,birthdateP,photoP,emailP,usernameP,passwordP,0);
+
+END;//
+DELIMITER ;
