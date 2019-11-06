@@ -1,0 +1,25 @@
+ALTER TABLE events
+  ADD CREATE_USER varchar(25);
+ALTER TABLE events
+  ADD MOD_USER varchar(25);
+ALTER TABLE events
+  ADD CREATE_DATE date;
+ALTER TABLE events
+  ADD MOD_DATE date;
+  
+delimiter //
+create trigger CREATE_EVENT_TRIGGER	
+	before  insert on events
+	FOR EACH ROW BEGIN
+		SET NEW.CREATE_USER = user();
+        SET NEW.CREATE_DATE  =CURDATE() ;
+     end; // 
+     
+delimiter //
+create trigger MOD_EVENT_TRIGGER	
+	before  update on events
+	FOR EACH ROW BEGIN
+		SET NEW.MOD_USER = user();
+        SET NEW.MOD_DATE  =CURDATE() ;
+     end; // 
+     

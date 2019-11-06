@@ -1,0 +1,25 @@
+ALTER TABLE categoryxevent
+  ADD CREATE_USER varchar(25);
+ALTER TABLE categoryxevent
+  ADD MOD_USER varchar(25);
+ALTER TABLE categoryxevent
+  ADD CREATE_DATE date;
+ALTER TABLE categoryxevent
+  ADD MOD_DATE date;
+  
+delimiter //
+create trigger CREATE_categoryxevent_TRIGGER	
+	before  insert on categoryxevent
+	FOR EACH ROW BEGIN
+		SET NEW.CREATE_USER = user();
+        SET NEW.CREATE_DATE  =CURDATE() ;
+     end; // 
+     
+delimiter //
+create trigger MOD_categoryxevent_TRIGGER	
+	before  update on categoryxevent
+	FOR EACH ROW BEGIN
+		SET NEW.MOD_USER = user();
+        SET NEW.MOD_DATE  =CURDATE() ;
+     end; // 
+     

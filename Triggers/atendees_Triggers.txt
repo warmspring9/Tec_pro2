@@ -1,0 +1,25 @@
+ALTER TABLE atendees
+  ADD CREATE_USER varchar(25);
+ALTER TABLE atendees
+  ADD MOD_USER varchar(25);
+ALTER TABLE atendees
+  ADD CREATE_DATE date;
+ALTER TABLE atendees
+  ADD MOD_DATE date;
+  
+delimiter //
+create trigger CREATE_ATENDEES_TRIGGER	
+	before  insert on atendees
+	FOR EACH ROW BEGIN
+		SET NEW.CREATE_USER = user();
+        SET NEW.CREATE_DATE  =CURDATE() ;
+     end; // 
+     
+delimiter //
+create trigger MOD_ATENDEES_TRIGGER	
+	before  update on atendees
+	FOR EACH ROW BEGIN
+		SET NEW.MOD_USER = user();
+        SET NEW.MOD_DATE  =CURDATE() ;
+     end; // 
+     
