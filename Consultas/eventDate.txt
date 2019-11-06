@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE eventDate(dayP date,weekP date,monthP date,yearP date)
+BEGIN
+SELECT *
+FROM event evn
+WHERE(dayP=evn.date OR YEARWEEK( weekP) = YEARWEEK(evn.date) OR  DATE_FORMAT(monthP,'%Y-%m') =  DATE_FORMAT(evn.date,'%Y-%m') OR YEAR(yearP) = YEAR(evn.date) );
+END;//
+DELIMITER ;

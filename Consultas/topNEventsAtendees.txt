@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE topNEventsAtendees()
+BEGIN
+SELECT id_event,count(id_user)
+FROM atendees
+group by id_event;
+END;//
+DELIMITER ;

@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE eventCategoryReviews()
+BEGIN
+SELECT count(com.id)	
+FROM categoryxevent cxe inner join comments com on cxe.id_event = com.id_event
+group by cxe.id_category;
+END;//
+DELIMITER ;

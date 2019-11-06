@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE   invitedToEvent( stateP varchar(64), id_eventP int)
+BEGIN
+SELECT *
+FROM repleis reply inner join users  user on reply.id_user =  user.username
+WHERE reply.id_event = id_eventP AND  (stateP is NULL OR stateP=reply.type);
+END;//
+DELIMITER ;

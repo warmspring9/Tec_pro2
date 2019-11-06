@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE   commentsFromUserOnEvent(id_eventP int,nameP varchar(60))
+BEGIN
+SELECT content,photo,continent_name
+FROM comments
+WHERE (comments.id_user=nameP AND comments.id_event = id_eventP);
+END;//
+DELIMITER ;

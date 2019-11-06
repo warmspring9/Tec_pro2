@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE eventCategory()
+BEGIN
+SELECT count(id_category)
+FROM categoryxevent
+group by id_category;
+END;//
+DELIMITER ;

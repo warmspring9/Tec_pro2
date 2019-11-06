@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE   listAssistedEvents(id_userP varchar(60))
+BEGIN
+SELECT id_event
+FROM atendees
+WHERE (atendees.id_user = id_userP);
+END;//
+DELIMITER ;

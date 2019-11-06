@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE   listPublicEvents()
+BEGIN
+SELECT id
+FROM events
+WHERE (sysdate()<events.date AND events.privacy = 'public');
+END;//
+DELIMITER ;

@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE  PROCEDURE   logIn(userNameP varchar(60),passwordP int)
+BEGIN
+	SELECT id_account,email,photo,name,last_name,birthdate
+	FROM users
+	WHERE users.username = userNameP AND passwordP = users.password;
+END;//
+DELIMITER ;

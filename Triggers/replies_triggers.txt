@@ -1,0 +1,25 @@
+ALTER TABLE replies
+  ADD CREATE_USER varchar(25);
+ALTER TABLE replies
+  ADD MOD_USER varchar(25);
+ALTER TABLE replies
+  ADD CREATE_DATE date;
+ALTER TABLE replies
+  ADD MOD_DATE date;
+  
+delimiter //
+create trigger CREATE_replies_TRIGGER	
+	before  insert on replies
+	FOR EACH ROW BEGIN
+		SET NEW.CREATE_USER = user();
+        SET NEW.CREATE_DATE  =CURDATE() ;
+     end; // 
+     
+delimiter //
+create trigger MOD_replies_TRIGGER	
+	before  update on replies
+	FOR EACH ROW BEGIN
+		SET NEW.MOD_USER = user();
+        SET NEW.MOD_DATE  =CURDATE() ;
+     end; // 
+     
