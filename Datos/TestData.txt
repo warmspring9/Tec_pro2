@@ -1,55 +1,58 @@
 
 
 INSERT INTO `sys`.`category`(`id`,`name`,`status`)
-VALUES(0,Fiesta,enable);
+VALUES(0,"Fiesta","enable");
 
 INSERT INTO `sys`.`category`(`id`,`name`,`status`)
-VALUES(1,Concierto,enable);
+VALUES(1,"Concierto","enable");
 
 INSERT INTO `sys`.`category`(`id`,`name`,`status`)
-VALUES(2,Torneo,enable);
+VALUES(2,"Torneo","enable");
 
 INSERT INTO `sys`.`category`(`id`,`name`,`status`)
-VALUES(3,Cine,enable);
+VALUES(3,"Cine","enable");
 
 INSERT INTO `sys`.`accounts`(`id`,`name`)
-VALUES(0,user);
+VALUES(0,"user");
 
 INSERT INTO `sys`.`accounts`(`id`,`name`)
-VALUES(1,admin);
+VALUES(1,"admin");
 
 INSERT INTO `sys`.`events`(`id`,`id_user`,`name`,`privacy`,`description`,`date`,`location`,`status`)
-VALUES(0,Dali01,Maraton de Cine,Public,Peliculas,20200505,San Jose,Enable);
+VALUES(0,"Dali01","Maraton de Cine","Public","Peliculas","2020/05/05","San Jose","Enable");
 
 INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
-VALUES(Dali,Alvarez,20000505,httpsbit.ly2PWnZ4M,mail@mail,Dali01,Da123,0);
+VALUES("Dali","Alvarez","2000/05/05","https://bit.ly/2PWnZ4M","mail@mail","Dali01","Da123","0");
 
 INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
-VALUES(Juan,Pablo,19800505,httpsbit.ly2PWnZ4M,juan@mail,Juan,Juan123,0);
+VALUES("Juan","Pablo","1980/05/05","https://bit.ly/2PWnZ4M","juan@mail","Juan","Juan123","0");
 
 INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
-VALUES(Diego,Alvarez,19800505,httpsbit.ly2PWnZ4M,juan@mail,Daae,Dae123,0);
+VALUES("Diego","Alvarez","1980/05/05","https://bit.ly/2PWnZ4M","juan@mail","Daae","Dae123","0");
 
 INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
-VALUES(Jimena,Saenz,19800505,httpsbit.ly2PWnZ4M,den@mail,Juee,Jue123,0);
+VALUES("Jimena","Saenz","1980/05/05","https://bit.ly/2PWnZ4M","den@mail","Juee","Jue123","0");
 
 INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
-VALUES(Admin,Admin,20000505,,Admin@Admin,Admin,Admin,1);
+VALUES("Admin","Admin","2000/05/05","","Admin@Admin","Admin","Admin","1");
 
 INSERT INTO `sys`.`events`(`id`,`id_user`,`name`,`privacy`,`description`,`date`,`location`,`status`)
-VALUES(0,Dali01,Maraton de Cine,Public,Peliculas,20200505,San Jose,Enable);
+VALUES(0,"Dali01","Maraton de Cine","Public","Peliculas","2020/05/05","San Jose","Enable");
 
 INSERT INTO `sys`.`events`(`id`,`id_user`,`name`,`privacy`,`description`,`date`,`location`,`status`)
-VALUES(1,Juan,Chivo,Public,Conviertos,20700505,San Jose,Enable);
+VALUES(1,"Juan","Chivo","Public","Conviertos","2070/05/05","San Jose","Enable");
 
 INSERT INTO `sys`.`events`(`id_user`,`name`,`privacy`,`description`,`date`,`location`,`status`)
-VALUES(Daae,Cumple Años,Public,Fiesta,20700505,San Jose,Enable);
+VALUES("Daae","Cumple Años","Public","Fiesta","2070/05/05","San Jose","Enable");
 
 INSERT INTO `sys`.`comments`(`content`,`photo`,`id_user`,`id_event`)
-VALUES(Muy divertido,,Daae,1);
+VALUES("Muy divertido","","Daae",1);
 
 INSERT INTO `sys`.`comments`(`content`,`photo`,`id_user`,`id_event`)
-VALUES(Feo,,Daae,2);
+VALUES("Feo","","Daae",2);
 
 INSERT INTO `sys`.`comments`(`content`,`photo`,`id_user`,`id_event`)
-VALUES(Feo,,Juee,2);
+VALUES("Feo","","Juee",2);
+
+select * from comments
+
