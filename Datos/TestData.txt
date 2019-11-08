@@ -33,6 +33,15 @@ VALUES("Jimena","Saenz","1980/05/05","https://bit.ly/2PWnZ4M","den@mail","Juee",
 INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
 VALUES("Admin","Admin","2000/05/05","","Admin@Admin","Admin","Admin","1");
 
+INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
+VALUES("Marco","Pablo","1980/05/05","https://bit.ly/2PWnZ4M","juan@mail","Marc","Marc123","0");
+
+INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
+VALUES("Monica","Chavarria","1980/05/05","https://bit.ly/2PWnZ4M","juan@mail","Mom","Marc123","0");
+
+INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
+VALUES("Juana","Chavarria","1999/05/05","https://bit.ly/2PWnZ4M","juan@mail","Junia","Marc123","0");
+
 INSERT INTO `sys`.`events`(`id`,`id_user`,`name`,`privacy`,`description`,`date`,`location`,`status`)
 VALUES(0,"Dali01","Maraton de Cine","Public","Peliculas","2020/05/05","San Jose","Enable");
 
