@@ -2,3 +2,4 @@ alter table `events` modify column id INT NOT NULL AUTO_INCREMENT;
 alter table `comments` modify column id INT NOT NULL AUTO_INCREMENT;
 ALTER TABLE comments DROP COLUMN continent_name; 
 ALTER TABLE events MODIFY  id_user VARCHAR(255)
+ALTER TABLE users ADD gender  varchar(25); 
