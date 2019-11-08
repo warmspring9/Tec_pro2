@@ -18,9 +18,6 @@ VALUES(0,"user");
 INSERT INTO `sys`.`accounts`(`id`,`name`)
 VALUES(1,"admin");
 
-INSERT INTO `sys`.`events`(`id`,`id_user`,`name`,`privacy`,`description`,`date`,`location`,`status`)
-VALUES(0,"Dali01","Maraton de Cine","Public","Peliculas","2020/05/05","San Jose","Enable");
-
 INSERT INTO `sys`.`users`(`name`,`last_name`,`birthdate`,`photo`,`email`,`username`,`password`,`id_account`)
 VALUES("Dali","Alvarez","2000/05/05","https://bit.ly/2PWnZ4M","mail@mail","Dali01","Da123","0");
 
@@ -54,5 +51,21 @@ VALUES("Feo","","Daae",2);
 INSERT INTO `sys`.`comments`(`content`,`photo`,`id_user`,`id_event`)
 VALUES("Feo","","Juee",2);
 
-select * from comments
+INSERT INTO `sys`.`categoryxevent`(`id_event`,`id_category`)
+VALUES(1,3);
+INSERT INTO `sys`.`categoryxevent`(`id_event`,`id_category`)
+VALUES(3,0);
+INSERT INTO `sys`.`categoryxevent`(`id_event`,`id_category`)
+VALUES(2,1);
+INSERT INTO `sys`.`atendees`(`id_user`,`id_event`)
+VALUES("Daae",1);
+INSERT INTO `sys`.`atendees`(`id_user`,`id_event`)
+VALUES("Daae",2);
+INSERT INTO `sys`.`atendees`(`id_user`,`id_event`)
+VALUES("Juee",2);
+INSERT INTO `sys`.`atendees`(`id_user`,`id_event`)
+VALUES("Juee",3);
+
+
+
 
