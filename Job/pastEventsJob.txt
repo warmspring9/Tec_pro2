@@ -1,0 +1,7 @@
+CREATE EVENT `pastEventsJob` ON SCHEDULE
+	 EVERY 1 DAY
+    DO 
+INSERT INTO `pastevents`(`id`,`id_user`,`name`,`description`,`date`,`location`)
+select events.id,events.id_user,events.name,description,date,location
+from events
+where(events.date<CURDATE());
