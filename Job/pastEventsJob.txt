@@ -1,0 +1,14 @@
+DELIMITER //
+
+CREATE EVENT `pastEventsJob` ON SCHEDULE
+	 EVERY 1 DAY
+    DO 
+    begin
+INSERT INTO `pastevents`(`id`,`id_user`,`name`,`description`,`date`,`location`)
+select events.id,events.id_user,events.name,description,date,location
+from events
+where(events.date<CURDATE());
+DELETE FROM events 
+WHERE events.date<CURDATE(); 
+END;//
+DELIMITER ;

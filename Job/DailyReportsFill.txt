@@ -1,0 +1,8 @@
+CREATE EVENT `DailyReportsFill` ON SCHEDULE
+	 EVERY 1 DAY
+    DO 
+INSERT INTO DailyReports(id_user,id_event)
+select username,re.id_event
+from users us inner join replies re on re.id_user = us.username
+			   inner join  events evn on evn.id = re.id_event
+where(re.type = "Asistire" AND evn.date>CURRENT_DATE() );
