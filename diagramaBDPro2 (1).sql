@@ -62,7 +62,7 @@ CREATE TABLE `categoryXEvent` (
 );
 
 CREATE TABLE `favCategory` (
-  `id_category` varchar(255),
+  `id_category` int,
   `id_user` varchar(255)
 );
 
