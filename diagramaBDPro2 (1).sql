@@ -51,14 +51,14 @@ CREATE TABLE `comments` (
 );
 
 CREATE TABLE `category` (
-  `id` varchar(255) PRIMARY KEY,
+  `id` int PRIMARY KEY,
   `name` varchar(255),
   `status` varchar(255)
 );
 
 CREATE TABLE `categoryXEvent` (
   `id_event` int,
-  `id_category` varchar(255)
+  `id_category` int
 );
 
 CREATE TABLE `favCategory` (
