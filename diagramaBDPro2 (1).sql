@@ -10,7 +10,7 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `user_types` (
-  `id` int,
+  `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255)
 );
 
@@ -51,7 +51,7 @@ CREATE TABLE `comments` (
 );
 
 CREATE TABLE `category` (
-  `id` int PRIMARY KEY,
+  `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
   `status` varchar(255)
 );
