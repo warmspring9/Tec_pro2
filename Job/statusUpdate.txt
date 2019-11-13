@@ -1,0 +1,12 @@
+DELIMITER //
+
+CREATE EVENT `statusUpdate` ON SCHEDULE
+	 EVERY 1 DAY
+    DO 
+    begin
+
+UPDATE  events
+set events.status = "completed"
+WHERE events.date<CURDATE(); 
+END;//
+DELIMITER ;

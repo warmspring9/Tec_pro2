@@ -1,7 +1,5 @@
 CREATE TABLE DailyReports (
-	id int NOT NULL AUTO_INCREMENT,
     id_user varchar(255),
     id_event int,
-         PRIMARY KEY (id)
 
 );
